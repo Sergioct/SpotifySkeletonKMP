@@ -18,7 +18,7 @@ kotlin {
     }
     
     listOf(
-        iosX64(),
+        //iosX64(), mac with intel cpu
         iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
@@ -44,7 +44,6 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            api(libs.precompose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

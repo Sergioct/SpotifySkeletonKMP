@@ -7,12 +7,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.key.Key.Companion.R
 import com.sergiocrespotoubesspotifyskeletonkmp.theme.SpotifyDimen
 import com.sergiocrespotoubesspotifyskeletonkmp.theme.SpotifyTheme
 import com.sergiocrespotoubesspotifyskeletonkmp.ui.image.SpotifyImage
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import spotifyskeletonkmp.composeapp.generated.resources.Res
+import spotifyskeletonkmp.composeapp.generated.resources.splash_name
+import spotifyskeletonkmp.composeapp.generated.resources.splash_spotify
 
 @Composable
 fun SplashScreen(
@@ -46,8 +49,8 @@ private fun Design(
                     .padding(horizontal = SpotifyDimen.spaceBig()),
         ) {
             SpotifyImage(
-                painter = painterResource(R.drawable.splash_spotify),
-                contentDescription = //stringResource(R.string.splash_name),
+                painter = painterResource(Res.drawable.splash_spotify),
+                contentDescription = stringResource(Res.string.splash_name),
             )
             /*SpotifyTextTitleBold(
                 modifier =
