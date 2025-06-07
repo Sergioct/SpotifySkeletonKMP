@@ -29,3 +29,9 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":core:data")
+include(":core:domain")
+include(":feature:splash")
+include(":feature:search")
+include(":feature:trackdetail")
+include(":feature:artistdetail")
