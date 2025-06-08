@@ -22,7 +22,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "home"
+            baseName = "search"
             isStatic = true
         }
     }
@@ -76,7 +76,7 @@ kotlin {
     }
 }
 android {
-    namespace = "com.sergiocrespotoubes.search"
+    namespace = "com.sergiocrespotoubesspotifyskeletonkmp.search"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    //alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -21,7 +21,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "domain"
+            baseName = "navigation"
             isStatic = true
         }
     }
@@ -30,6 +30,7 @@ kotlin {
         val desktopMain by getting
 
         commonMain.dependencies {
+            implementation(libs.navigation.compose)
             //implementation(libs.bundles.ktor)
             //implementation(project.dependencies.platform(libs.koin.bom))
             //implementation(libs.koin.core)
@@ -56,7 +57,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.sergiocrespotoubesspotifyskeletonkmp.domain"
+    namespace = "com.sergiocrespotoubesspotifyskeletonkmp.navigation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

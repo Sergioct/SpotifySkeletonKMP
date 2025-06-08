@@ -38,8 +38,16 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(libs.navigation.compose)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(projects.core.navigation)
+            implementation(projects.core.domain)
+            implementation(projects.core.data)
+            implementation(projects.feature.search)
+            implementation(projects.feature.artistdetail)
+            implementation(projects.feature.splash)
+            implementation(projects.feature.trackdetail)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

@@ -22,7 +22,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "home"
+            baseName = "splash"
             isStatic = true
         }
     }
@@ -77,7 +77,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.sergiocrespotoubes.splash"
+    namespace = "com.sergiocrespotoubesspotifyskeletonkmp.splash"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
