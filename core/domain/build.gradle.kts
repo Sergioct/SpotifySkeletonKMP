@@ -16,7 +16,6 @@ kotlin {
     jvm("desktop")
 
     listOf(
-        iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
@@ -30,22 +29,22 @@ kotlin {
         val desktopMain by getting
 
         commonMain.dependencies {
+            api(projects.core.common)
             //implementation(libs.bundles.ktor)
-            //implementation(project.dependencies.platform(libs.koin.bom))
-            //implementation(libs.koin.core)
-            //implementation(libs.koin.compose)
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
         }
 
         commonTest.dependencies {
-            implementation(libs.kotlin.test)
-
+            //implementation(libs.kotlin.test)
         }
 
         androidMain.dependencies {
             //implementation(libs.ktor.client.okhttp)
         }
 
-        iosMain. dependencies {
+        iosMain.dependencies {
             //implementation(libs.ktor.client.darwin)
         }
 

@@ -26,31 +26,38 @@ kotlin {
     }
     
     sourceSets {
+        commonMain.dependencies {
+            api(compose.foundation)
+            api(compose.animation)
+            implementation(compose.components.resources)
+            implementation(compose.components.uiToolingPreview)
+            implementation(compose.material3)
+            implementation(compose.runtime)
+            implementation(compose.ui)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(libs.androidx.lifecycle.viewmodel)
+            implementation(libs.navigation.compose)
+            implementation(projects.core.common)
+            implementation(projects.core.data)
+            implementation(projects.core.domain)
+            implementation(projects.core.navigation)
+            implementation(projects.core.preferences)
+            implementation(projects.core.testing)
+            implementation(projects.core.ui)
+            implementation(projects.feature.artistdetail)
+            implementation(projects.feature.search)
+            implementation(projects.feature.splash)
+            implementation(projects.feature.trackdetail)
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+        }
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
-        }
-        commonMain.dependencies {
-            implementation(compose.runtime)
-            api(compose.foundation)
-            api(compose.animation)
-            implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
-            implementation(libs.navigation.compose)
-            implementation(libs.androidx.lifecycle.viewmodel)
-            implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation(projects.core.navigation)
-            implementation(projects.core.domain)
-            implementation(projects.core.data)
-            implementation(projects.feature.search)
-            implementation(projects.feature.artistdetail)
-            implementation(projects.feature.splash)
-            implementation(projects.feature.trackdetail)
+            implementation(libs.koin.android)
         }
         commonTest.dependencies {
-            implementation(libs.kotlin.test)
+            //implementation(libs.kotlin.test)
         }
     }
 }

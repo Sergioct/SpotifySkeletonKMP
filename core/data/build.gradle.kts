@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
 }
 kotlin {
     listOf(
@@ -23,9 +24,12 @@ kotlin {
     sourceSets {
         val desktopMain by getting
         commonMain.dependencies {
-            //implementation(libs.bundles.ktor)
-            //implementation(project.dependencies.platform(libs.koin.bom))
-            //implementation(libs.koin.core)
+            api(projects.core.common)
+            api(projects.core.domain)
+            api(projects.core.preferences)
+            implementation(libs.bundles.ktor)
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
             //implementation(libs.koin.compose)
             //implementation(projects.core.model)
         }
@@ -33,13 +37,13 @@ kotlin {
             implementation(libs.kotlin.test)
         }
         androidMain.dependencies {
-            //implementation(libs.ktor.client.okhttp)
+            implementation(libs.ktor.client.okhttp)
         }
         iosMain.dependencies {
-            //implementation(libs.ktor.client.darwin)
+            implementation(libs.ktor.client.darwin)
         }
         desktopMain.dependencies {
-            //implementation(libs.ktor.client.cio)
+            implementation(libs.ktor.client.cio)
         }
     }
 }

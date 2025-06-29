@@ -43,19 +43,20 @@ kotlin {
             //implementation(libs.bundles.ktor)
             //implementation(libs.navigation.compose)
             //implementation(libs.bundles.coil)
-            //implementation(project.dependencies.platform(libs.koin.bom))
-            //implementation(libs.koin.core)
-            //implementation(libs.koin.compose)
-            //implementation(libs.koin.compose.viewmodel)
+
+            // DI - Koin
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
             //implementation(libs.koin.compose.viewmodel.navigation)
 
-            //implementation(projects.core.data)
+            implementation(projects.core.domain)
             //implementation(projects.core.model)
         }
 
         commonTest.dependencies {
-            implementation(libs.kotlin.test)
-
+            //implementation(libs.kotlin.test)
         }
 
         androidMain.dependencies {

@@ -29,10 +29,14 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":core:common")
 include(":core:data")
 include(":core:domain")
 include(":core:navigation")
-include(":feature:splash")
-include(":feature:search")
-include(":feature:trackdetail")
+include(":core:preferences")
+include(":core:testing")
+include(":core:ui")
 include(":feature:artistdetail")
+include(":feature:search")
+include(":feature:splash")
+include(":feature:trackdetail")
